@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/Reservaciones")
+@RequestMapping("/api/Reservation")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 
 public class ControladorReservaciones {
     @Autowired
     private ServiciosReservaciones servicio;
 
-    @GetMapping("/todas")
+    @GetMapping("/all")
     public List<Reservaciones> getReservations() {
         return servicio.getAll();
     }
@@ -27,7 +27,7 @@ public class ControladorReservaciones {
         return servicio.getReservation(reservationId);
     }
 
-    @PostMapping("/guardar")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reservaciones save(@RequestBody Reservaciones reservation) {
         return servicio.save(reservation);

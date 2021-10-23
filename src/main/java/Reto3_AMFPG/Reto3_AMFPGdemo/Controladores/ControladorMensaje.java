@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/Mensaje")
+@RequestMapping("/api/Message")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 
 public class ControladorMensaje {
     @Autowired
     private ServiciosMensaje servico;
 
-    @GetMapping("/todas")
+    @GetMapping("/all")
     public List<Mensaje> getMessages() {
         return servico.getAll();
     }
@@ -27,7 +27,7 @@ public class ControladorMensaje {
         return servico.getMessage(messageId);
     }
 
-    @PostMapping("/guardar")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Mensaje save(@RequestBody Mensaje message) {
         return servico.save(message);

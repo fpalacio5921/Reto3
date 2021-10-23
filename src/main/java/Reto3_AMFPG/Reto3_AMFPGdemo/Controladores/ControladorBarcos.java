@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/Barcos")
+@RequestMapping("/api/Boat")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 
 public class ControladorBarcos {
     @Autowired
     private ServiciosBarcos servicio;
 
-    @GetMapping("/todas")
+    @GetMapping("/all")
     public List<Barcos> getBarcos() {
         return servicio.getAll();
     }
@@ -27,7 +27,7 @@ public class ControladorBarcos {
         return servicio.getBarcos(boadId);
     }
 
-    @PostMapping("/guardar")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Barcos save(@RequestBody Barcos boat) {
         return servicio.save(boat);

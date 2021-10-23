@@ -29,19 +29,19 @@ public class Barcos implements Serializable{
      */
     private Integer id;
     /**
-     * Se crea el atributo brand en la entidad boat
-     */
-    @Column(length = 45)
-    private String brand;
-    /**
      * Se crea el atributo name en la entidad boat
      */
     @Column(length = 45)
     private String name;
     /**
-     * Se crea el atributo model en la entidad boat
+     * Se crea el atributo brand en la entidad boat
      */
-    private Integer model;
+    @Column(length = 45)
+    private String brand;
+    /**
+     * Se crea el atributo year en la entidad boat
+     */
+    private Integer year;
     /**
      * Se crea el attributo description en la entidad boat
      */
@@ -87,22 +87,6 @@ public class Barcos implements Serializable{
     }
 
     /**
-     * Se crea el getter del atributo brand de la entidad boat
-     * @return
-     */
-    public String getBrand() {
-        return brand;
-    }
-
-    /**
-     * Se crea el setter del atributo brand de la entidad boat
-     * @param brand
-     */
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    /**
      * Se crea el getter del atributo name de la entidad boat
      * @return
      */
@@ -119,19 +103,35 @@ public class Barcos implements Serializable{
     }
 
     /**
-     * Se crea el getter del atributo model de la entidad boat
+     * Se crea el getter del atributo brand de la entidad boat
      * @return
      */
-    public Integer getModel() {
-        return model;
+    public String getBrand() {
+        return brand;
     }
 
     /**
-     * Se crea el setter del atributo model de la entidad boat
-     * @param model
+     * Se crea el setter del atributo brand de la entidad boat
+     * @param brand
      */
-    public void setModel(Integer model) {
-        this.model = model;
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    /**
+     * Se crea el getter del atributo year de la entidad boat
+     * @return
+     */
+    public Integer getYear() {
+        return year;
+    }
+
+    /**
+     * Se crea el setter del atributo year de la entidad boat
+     * @param year
+     */
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     /**

@@ -24,7 +24,8 @@ public class Reservaciones implements Serializable  {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status="Creado";
+    private String status="created";
+
 
     @ManyToOne
     @JoinColumn(name = "id")
@@ -35,6 +36,7 @@ public class Reservaciones implements Serializable  {
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"reservations","messages"})
     private Cliente client;
+    private String score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -83,4 +85,13 @@ public class Reservaciones implements Serializable  {
     public void setClient(Cliente client) {
         this.client = client;
     }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
 }

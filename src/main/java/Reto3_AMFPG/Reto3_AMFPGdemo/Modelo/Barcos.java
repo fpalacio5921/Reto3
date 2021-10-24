@@ -53,7 +53,7 @@ public class Barcos implements Serializable{
      */
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("boat")
+    @JsonIgnoreProperties("boats")
     private Categoria category;
     /**
      * Se crea la relacion de entidades de uno a muchos entre las
@@ -69,7 +69,6 @@ public class Barcos implements Serializable{
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "boat")
     @JsonIgnoreProperties({"boat", "client"})
     private List<Reservaciones> reservations;
-
     /**
      * Se crea el getter del atributo id de la entidad boat
      * @return
@@ -77,7 +76,6 @@ public class Barcos implements Serializable{
     public Integer getId() {
         return id;
     }
-
     /**
      * Se crea el setter del atributo id de la entidad boat
      * @param id
@@ -85,7 +83,6 @@ public class Barcos implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
-
     /**
      * Se crea el getter del atributo name de la entidad boat
      * @return
@@ -93,7 +90,6 @@ public class Barcos implements Serializable{
     public String getName() {
         return name;
     }
-
     /**
      * Se crea el setter del atributo name de la entidad boat
      * @param name
@@ -101,7 +97,6 @@ public class Barcos implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-
     /**
      * Se crea el getter del atributo brand de la entidad boat
      * @return
@@ -109,7 +104,6 @@ public class Barcos implements Serializable{
     public String getBrand() {
         return brand;
     }
-
     /**
      * Se crea el setter del atributo brand de la entidad boat
      * @param brand
@@ -117,7 +111,6 @@ public class Barcos implements Serializable{
     public void setBrand(String brand) {
         this.brand = brand;
     }
-
     /**
      * Se crea el getter del atributo year de la entidad boat
      * @return
@@ -125,7 +118,6 @@ public class Barcos implements Serializable{
     public Integer getYear() {
         return year;
     }
-
     /**
      * Se crea el setter del atributo year de la entidad boat
      * @param year
@@ -133,7 +125,6 @@ public class Barcos implements Serializable{
     public void setYear(Integer year) {
         this.year = year;
     }
-
     /**
      * Se crea el getter del atributo description de la entidad boat
      * @return
@@ -141,7 +132,6 @@ public class Barcos implements Serializable{
     public String getDescription() {
         return description;
     }
-
     /**
      * Se crea el setter del atributo description de la entidad boat
      * @param description
@@ -149,7 +139,6 @@ public class Barcos implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-
     /**
      * Se crea el getter del atributo category en la relacion
      * entre boat y category
@@ -158,7 +147,6 @@ public class Barcos implements Serializable{
     public Categoria getCategory() {
         return category;
     }
-
     /**
      * Se crea el setter de la entidad category en la relacion
      * entre boat y category
@@ -167,7 +155,6 @@ public class Barcos implements Serializable{
     public void setCategory(Categoria category) {
         this.category = category;
     }
-
     /**
      * Se crea el getter de la entidad message en la relacion
      * entre boat y message
@@ -176,7 +163,6 @@ public class Barcos implements Serializable{
     public List<Mensaje> getMessages() {
         return messages;
     }
-
     /**
      * Se crea el setter de la entidad message en la relacion
      * entre boat y message
@@ -185,7 +171,6 @@ public class Barcos implements Serializable{
     public void setMessages(List<Mensaje> messages) {
         this.messages = messages;
     }
-
     /**
      * Se crea el getter de la entidad reservations en la relacion
      * entre boat y reservations
@@ -194,7 +179,6 @@ public class Barcos implements Serializable{
     public List<Reservaciones> getReservations() {
         return reservations;
     }
-
     /**
      * Se crea el setter de la entidad reservations en la relacion
      * entre boat y reservations
@@ -203,5 +187,6 @@ public class Barcos implements Serializable{
     public void setReservations(List<Reservaciones> reservations) {
         this.reservations = reservations;
     }
+
 }
 
